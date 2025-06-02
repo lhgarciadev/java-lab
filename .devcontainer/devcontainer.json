@@ -14,7 +14,7 @@
             "installGradle": "false"
         },
         "ghcr.io/devcontainers/features/python:1": {
-            "version": "3.11", // Puedes elegir 3.9, 3.10, etc.
+            "version": "3.10", // Puedes elegir 3.9, 3.10, etc.
             "installTools": true
         },
         "ghcr.io/devcontainers/features/docker-in-docker:2": { // Opcional, pero útil
@@ -24,7 +24,7 @@
     },
 
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "pip install --upgrade pip && pip install pandas scikit-learn numpy matplotlib seaborn jupyterlab torch torchvision torchaudio tensorflow",
+    // "postCreateCommand": "pip install --upgrade pip && pip install pandas scikit-learn numpy matplotlib seaborn jupyterlab torch torchvision torchaudio tensorflow",
     // Consider using a requirements.txt file for more complex Python dependencies:
     // "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
 
