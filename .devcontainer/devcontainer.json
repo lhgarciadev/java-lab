@@ -12,14 +12,48 @@
             "installMaven": "true",
             "mavenVersion": "3.9.7",
             "installGradle": "false"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11", // Puedes elegir 3.9, 3.10, etc.
+            "installTools": true
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": { // Opcional, pero útil
+            "version": "latest",
+            "moby": true
         }
     },
-    "containerEnv": {},
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "pip install --upgrade pip && pip install pandas scikit-learn numpy matplotlib seaborn jupyterlab torch torchvision torchaudio tensorflow",
+    // Consider using a requirements.txt file for more complex Python dependencies:
+    // "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+
+
+    "containerEnv": {
+        // Variables de entorno específicas para Python, si las necesitas
+        // "PYTHONPATH": "/workspaces/${localWorkspaceFolderBasename}/src"
+    },
+
     "customizations": {
         "vscode": {
-            "settings": {},
+            "settings": {
+                // Ejemplo: especificar el path de Python si es necesario (usualmente detectado automáticamente)
+                // "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "editor.formatOnSave": true,
+                "python.formatting.provider": "autopep8", // o "black"
+                "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m"
+
+            },
             "extensions": [
-                "vscjava.vscode-java-pack"
+                "vscjava.vscode-java-pack",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-azuretools.vscode-docker",
+                "bierner.markdown-preview-github-styles",
+                "redhat.vscode-yaml",
+                "ms-python.pylint",
+                "formulahendry.code-runner"
             ]
         }
     }
