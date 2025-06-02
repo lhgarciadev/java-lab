@@ -55,7 +55,8 @@
                 "ms-python.pylint",
                 "formulahendry.code-runner",
                 "GitHub.copilot",
-                "GitHub.copilot-chat"
+                "GitHub.copilot-chat",
+                "ms-vscode.makefile-tools"
             ]
         }
     }
