@@ -1,3 +1,5 @@
+package com.example.demo;
+
 /*
  Clase 1 - Introducción a Java y hola mundo
  * Este es un ejemplo simple de un programa Java que imprime "Hello, world!" en la consola.
